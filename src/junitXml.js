@@ -43,7 +43,7 @@ const getSummary = (data) => {
   }
 
   const summary = { errors: 0, failures: 0, skipped: 0, tests: 0, time: 0 };
-  for (const testsuite of parser.resultObject.testsuites.testsuite) {
+  for (const testsuite of parser.resultObject.testsuite) {
     const { errors, failures, skipped, tests, time } = testsuite['$'];
     summary.errors += +errors;
     summary.failures += +failures;
@@ -67,7 +67,7 @@ const getTestCases = (data) => {
     return '';
   }
 
-  return parser.resultObject.testsuites.testsuite.map((t) => t.testcase).flat();
+  return parser.resultObject.testsuite.map((t) => t.testcase).flat();
 };
 
 const getNotSuccessTest = (options) => {
